@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suhada — Illustration &amp; Character Art</title>
+<meta name="description" content="Portfolio of Syeda Fatema Nusrat Suhada, 2D illustrator and fine art student at the University of Dhaka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Newsreader:ital,wght@0,400;0,500;1,400&family=Noto+Sans+Bengali:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1613;
+    --paper:#f1ece2;
+    --paper-dim:#e7e0d2;
+    --blood:#8c1c2b;
+    --blood-dark:#5c1019;
+    --blood-deep:#450d13;
+    --pencil:#6c665c;
+    --gold:#b8863b;
+    --line:rgba(28,22,19,0.14);
+    --max:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Newsreader', serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Bricolage Grotesque', sans-serif;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  ::selection{background:var(--blood);color:var(--paper);}
+  :focus-visible{outline:2px solid var(--blood);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 32px;
+    mix-blend-mode:normal;
+    background:linear-gradient(to bottom, rgba(241,236,226,0.92), rgba(241,236,226,0));
+    pointer-events:none;
+  }
+  header.site .brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:0.02em;pointer-events:auto;}
+  header.site nav{display:flex;gap:28px;pointer-events:auto;}
+  header.site nav a{
+    font-family:'Bricolage Grotesque',sans-serif;font-size:0.92rem;font-weight:500;
+    text-decoration:none;color:var(--ink);position:relative;padding-bottom:2px;
+  }
+  header.site nav a::after{
+    content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--blood);
+    transition:width 0.25s ease;
+  }
+  header.site nav a:hover::after,header.site nav a:focus-visible::after{width:100%;}
+  @media(max-width:640px){ header.site nav{gap:16px;} header.site nav a{font-size:0.8rem;} }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    display:grid;
+    grid-template-columns:1.05fr 1fr;
+    min-height:100vh;
+    background:var(--blood);
+    overflow:hidden;
+  }
+  .hero-art{
+    position:relative;
+    overflow:hidden;
+    background:var(--blood);
+  }
+  .hero-art img{
+    width:100%;height:100%;object-fit:cover;object-position:50% 12%;
+    opacity:0;
+    transform:scale(1.06);
+    animation:heroReveal 1.4s cubic-bezier(.2,.7,.2,1) 0.15s forwards;
+  }
+  @keyframes heroReveal{ to{opacity:1;transform:scale(1);} }
+  .hero-art::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg, rgba(140,28,43,0) 55%, var(--paper) 100%);
+    pointer-events:none;
+  }
+  .hero-copy{
+    background:var(--paper);
+    display:flex;flex-direction:column;justify-content:center;
+    padding:64px 56px;
+    position:relative;
+  }
+  .hero-copy .eyebrow{
+    font-family:'Noto Sans Bengali',sans-serif;
+    color:var(--blood);
+    font-size:0.95rem;
+    margin-bottom:18px;
+    letter-spacing:0.02em;
+  }
+  .hero-copy h1{
+    font-size:clamp(2.6rem,6vw,4.4rem);
+    line-height:0.98;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .hero-copy h1 span{display:block;color:var(--blood);}
+  .hero-copy p.role{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-size:1.05rem;
+    color:var(--pencil);
+    margin-top:22px;
+    max-width:34ch;
+    font-weight:500;
+  }
+  .hero-copy .meta{
+    margin-top:30px;
+    display:flex;flex-direction:column;gap:6px;
+    font-size:0.95rem;color:var(--pencil);
+    border-left:2px solid var(--line);
+    padding-left:16px;
+  }
+  .hero-actions{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:600;font-size:0.95rem;
+    padding:13px 26px;
+    border-radius:2px;
+    text-decoration:none;
+    display:inline-block;
+    border:1.5px solid var(--ink);
+    transition:background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  }
+  .btn.solid{background:var(--ink);color:var(--paper);}
+  .btn.solid:hover{background:var(--blood);border-color:var(--blood);transform:translateY(-2px);}
+  .btn.ghost{background:transparent;color:var(--ink);}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px);}
+
+  @media(max-width:860px){
+    .hero{grid-template-columns:1fr;}
+    .hero-art{height:52vh;}
+    .hero-art::after{background:linear-gradient(180deg, rgba(140,28,43,0) 60%, var(--paper) 100%);}
+    .hero-copy{padding:48px 28px 64px;}
+  }
+
+  /* ---------- SECTION LABELS ---------- */
+  .section{padding:110px 0;}
+  .section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    margin-bottom:52px;gap:24px;flex-wrap:wrap;
+    border-bottom:1px solid var(--line);
+    padding-bottom:22px;
+  }
+  .section-head h2{
+    font-size:clamp(1.9rem,3.4vw,2.6rem);
+    font-weight:700;
+  }
+  .section-head .index{
+    font-family:'Bricolage Grotesque',sans-serif;
+    color:var(--blood);font-weight:600;font-size:0.95rem;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.2fr 0.9fr;
+    gap:64px;
+    align-items:start;
+  }
+  .about-grid p{font-size:1.15rem;color:#2c2521;max-width:56ch;}
+  .about-grid p + p{margin-top:18px;}
+  .about-side{
+    border-left:2px solid var(--blood);
+    padding-left:24px;
+  }
+  .about-side h3{
+    font-size:0.85rem;
+    text-transform:none;
+    color:var(--pencil);
+    font-weight:600;
+    margin-bottom:14px;
+    font-family:'Bricolage Grotesque',sans-serif;
+  }
+  .tool-list{list-style:none;margin:0 0 30px;padding:0;}
+  .tool-list li{
+    display:flex;justify-content:space-between;
+    padding:10px 0;border-bottom:1px solid var(--line);
+    font-family:'Bricolage Grotesque',sans-serif;font-size:0.95rem;
+  }
+  .tool-list li span:last-child{color:var(--pencil);}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-size:0.8rem;font-weight:500;
+    border:1px solid var(--ink);
+    padding:6px 12px;border-radius:2px;
+  }
+  @media(max-width:860px){ .about-grid{grid-template-columns:1fr;gap:40px;} }
+
+  /* ---------- GALLERY ---------- */
+  .filters{display:flex;gap:10px;flex-wrap:wrap;}
+  .filter-btn{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-size:0.85rem;font-weight:600;
+    background:none;border:1px solid var(--line);
+    padding:8px 16px;border-radius:20px;cursor:pointer;
+    color:var(--pencil);
+    transition:all 0.2s ease;
+  }
+  .filter-btn:hover{border-color:var(--ink);color:var(--ink);}
+  .filter-btn.active{background:var(--ink);border-color:var(--ink);color:var(--paper);}
+
+  .gallery{
+    margin-top:44px;
+    column-count:2;
+    column-gap:28px;
+  }
+  .piece{
+    break-inside:avoid;
+    margin-bottom:28px;
+    position:relative;
+    cursor:zoom-in;
+    overflow:hidden;
+    border-radius:2px;
+    background:var(--paper-dim);
+    transition:transform 0.3s ease;
+  }
+  .piece img{width:100%;height:auto;display:block;transition:transform 0.5s ease;}
+  .piece:hover img{transform:scale(1.035);}
+  .piece figcaption{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:20px 18px 16px;
+    background:linear-gradient(to top, rgba(20,14,12,0.82), rgba(20,14,12,0));
+    color:#f4efe6;
+    opacity:0;
+    transform:translateY(8px);
+    transition:opacity 0.28s ease, transform 0.28s ease;
+  }
+  .piece:hover figcaption,.piece:focus-within figcaption{opacity:1;transform:translateY(0);}
+  .piece figcaption .p-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;}
+  .piece figcaption .p-meta{font-size:0.8rem;color:#d9cfc2;margin-top:2px;font-family:'Bricolage Grotesque',sans-serif;}
+  .piece[hidden]{display:none;}
+
+  @media(max-width:700px){ .gallery{column-count:1;} }
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox{
+    position:fixed;inset:0;background:rgba(19,13,11,0.94);
+    display:flex;align-items:center;justify-content:center;
+    z-index:100;padding:40px;
+    opacity:0;pointer-events:none;
+    transition:opacity 0.25s ease;
+  }
+  .lightbox.open{opacity:1;pointer-events:auto;}
+  .lightbox img{max-height:86vh;max-width:min(92vw,760px);border-radius:2px;box-shadow:0 30px 80px rgba(0,0,0,0.5);}
+  .lightbox .lb-cap{color:#eee5d8;text-align:center;margin-top:16px;font-family:'Bricolage Grotesque',sans-serif;}
+  .lightbox .lb-close{
+    position:absolute;top:24px;right:32px;
+    background:none;border:1px solid rgba(255,255,255,0.4);color:#eee5d8;
+    width:40px;height:40px;border-radius:50%;font-size:1.2rem;cursor:pointer;
+  }
+  .lightbox .lb-close:hover{background:var(--blood);border-color:var(--blood);}
+
+  /* ---------- PROCESS ---------- */
+  .process-band{background:var(--ink);color:var(--paper);}
+  .process-band .section-head{border-bottom:1px solid rgba(241,236,226,0.16);}
+  .process-band .section-head .index{color:#e0997f;}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;}
+  .step{border-top:2px solid var(--blood);padding-top:20px;}
+  .step h3{font-size:1.15rem;font-weight:700;margin-bottom:10px;}
+  .step p{color:#c9c0b3;font-size:0.98rem;margin:0;}
+  @media(max-width:860px){ .steps{grid-template-columns:1fr;gap:30px;} }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background:var(--blood-dark);
+    color:var(--paper);
+    padding:120px 0 70px;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact .wrap{position:relative;z-index:1;}
+  .contact h2{
+    font-size:clamp(2.4rem,7vw,5.2rem);
+    line-height:0.96;font-weight:800;
+  }
+  .contact p.lead{
+    font-family:'Bricolage Grotesque',sans-serif;
+    color:#e3b3a4;font-size:1.05rem;margin-top:20px;max-width:44ch;
+  }
+  .contact-links{
+    margin-top:44px;display:flex;flex-wrap:wrap;gap:18px 40px;
+  }
+  .contact-links a{
+    font-family:'Bricolage Grotesque',sans-serif;
+    text-decoration:none;font-weight:600;font-size:1.05rem;
+    border-bottom:1px solid transparent;
+    padding-bottom:3px;
+    transition:border-color 0.2s ease, opacity 0.2s ease;
+  }
+  .contact-links a:hover{border-color:var(--paper);}
+  footer{
+    margin-top:80px;padding-top:24px;border-top:1px solid rgba(241,236,226,0.18);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:0.82rem;color:#cf9f92;font-family:'Bricolage Grotesque',sans-serif;
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="brand">সুহাদা&nbsp; / SUHADA</div>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-art">
+    <img src="assets/work-01.png" alt="Digital illustration of a white-haired character against a deep red background, one of Suhada's featured pieces">
+  </div>
+  <div class="hero-copy">
+    <div class="eyebrow">ঢাকা বিশ্ববিদ্যালয় থেকে</div>
+    <h1>Syeda Fatema<span>Nusrat Suhada</span></h1>
+    <p class="role">2D illustrator working in ink, line, and colour — building character portraits one careful stroke at a time.</p>
+    <div class="meta">
+      <span>Fine Art student, University of Dhaka</span>
+      <span>3+ years in Procreate &amp; Audodesk</span>
+      <span>Based in Dhaka, Bangladesh</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#work" class="btn solid">See the work</a>
+      <a href="#contact" class="btn ghost">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>About the artist</h2>
+      <span class="index">01 / Bio</span>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>I'm Suhada — a fine art student at the University of Dhaka, and a 2D artist who spends most of her free hours drawing faces that don't exist yet. My work sits between careful ink linework and expressive colour, usually built around a single character and the mood a good line can carry.</p>
+        <p>Three years in, my process is still the same one I started with: rough gesture first, then the line that actually matters, then colour only where it earns its place. I move between finished colour pieces and looser monochrome studies depending on what the piece is asking for.</p>
+        <p>Outside of coursework, I take on character commissions, fan art, and original portrait studies — always looking for the version of a face that feels a little more alive than the last one.</p>
+      </div>
+      <div class="about-side">
+        <h3>Tools</h3>
+        <ul class="tool-list">
+          <li><span>Procreate</span><span>Primary — line &amp; colour</span></li>
+          <li><span>Audodesk</span><span>Studies &amp; sketch work</span></li>
+          <li><span>iPad + Apple Pencil</span><span>Everyday setup</span></li>
+        </ul>
+        <h3>Focus</h3>
+        <div class="tag-row">
+          <span class="tag">Character design</span>
+          <span class="tag">Line &amp; ink</span>
+          <span class="tag">Digital colour</span>
+          <span class="tag">Portrait studies</span>
+          <span class="tag">Fan art</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="section" id="work" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Selected work</h2>
+      <span class="index">02 / Gallery</span>
+    </div>
+    <div class="filters" role="tablist" aria-label="Filter artwork">
+      <button class="filter-btn active" data-filter="all">All pieces</button>
+      <button class="filter-btn" data-filter="color">Colour</button>
+      <button class="filter-btn" data-filter="line">Line work</button>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <figure class="piece" data-cat="color" tabindex="0">
+        <img src="assets/work-01.png" alt="Colour illustration of a spiky white-haired character in a dark sleeveless top on a red background" loading="lazy">
+        <figcaption><div class="p-title">Crimson Study</div><div class="p-meta">Digital colour · Procreate</div></figcaption>
+      </figure>
+
+      <figure class="piece" data-cat="line" tabindex="0">
+        <img src="assets/work-02.png" alt="Monochrome portrait sketch of a long-haired man with a stern expression" loading="lazy">
+        <figcaption><div class="p-title">Half-Turn</div><div class="p-meta">Line work · Audodesk</div></figcaption>
+      </figure>
+
+      <figure class="piece" data-cat="line" tabindex="0">
+        <img src="assets/work-03.png" alt="Monochrome sketch of a white-haired character with dog-like ears holding a sword" loading="lazy">
+        <figcaption><div class="p-title">Guardian's Rest</div><div class="p-meta">Line work · Procreate</div></figcaption>
+      </figure>
+
+      <figure class="piece" data-cat="line" tabindex="0">
+        <img src="assets/work-04.png" alt="Monochrome portrait of a young man wearing a face mask, curly dark hair" loading="lazy">
+        <figcaption><div class="p-title">Behind the Mask</div><div class="p-meta">Line work · Procreate</div></figcaption>
+      </figure>
+
+      <figure class="piece" data-cat="color" tabindex="0">
+        <img src="assets/work-05.png" alt="Colour illustration of a blonde character smirking, red background, open black shirt" loading="lazy">
+        <figcaption><div class="p-title">Gold on Red</div><div class="p-meta">Digital colour · Procreate</div></figcaption>
+      </figure>
+
+      <figure class="piece" data-cat="color" tabindex="0">
+        <img src="assets/work-06.png" alt="Softly coloured portrait of a pink-haired character wearing glasses" loading="lazy">
+        <figcaption><div class="p-title">Quiet Focus</div><div class="p-meta">Digital colour · Procreate</div></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="section process-band" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How a piece gets made</h2>
+      <span class="index">03 / Process</span>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Gesture &amp; structure</h3>
+        <p>Every piece starts loose — rough shapes and a pose, worked out fast until the character's weight feels right before a single clean line is drawn.</p>
+      </div>
+      <div class="step">
+        <h3>Ink &amp; line</h3>
+        <p>The real drawing happens here. Confident, deliberate linework in Procreate and Audodesk, refining expression and silhouette until the face reads clearly on its own.</p>
+      </div>
+      <div class="step">
+        <h3>Colour &amp; light</h3>
+        <p>Colour goes on last, and only where the piece calls for it — flat fields, a single strong background tone, and just enough shading to hold the form.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's make<br>a face together.</h2>
+    <p class="lead">Open to character commissions, illustration collaborations, and portfolio work. Based in Dhaka — happy to work with clients anywhere.</p>
+    <div class="contact-links">
+      <a href="mailto:syedafatemanusratsuhada.bd@gmail.com">syedafatemanusratsuhada.bd@gmail.com</a>
+      <a href="https://www.instagram.com/syeberarts/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <footer>
+      <span>© 2026 Syeda Fatema Nusrat Suhada</span>
+      <span>Dhaka, Bangladesh</span>
+    </footer>
+  </div>
+</section>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged artwork">
+  <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+  <div>
+    <img id="lbImg" src="" alt="">
+    <div class="lb-cap" id="lbCap"></div>
+  </div>
+</div>
+
+<script>
+  // Filtering
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const pieces = document.querySelectorAll('.piece');
+  filterBtns.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      filterBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      pieces.forEach(p=>{
+        p.hidden = !(f==='all' || p.dataset.cat===f);
+      });
+    });
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCap');
+  const lbClose = document.getElementById('lbClose');
+
+  function openLightbox(piece){
+    const img = piece.querySelector('img');
+    const title = piece.querySelector('.p-title').textContent;
+    const meta = piece.querySelector('.p-meta').textContent;
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCap.textContent = title + ' — ' + meta;
+    lightbox.classList.add('open');
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+  }
+  pieces.forEach(p=>{
+    p.addEventListener('click', ()=>openLightbox(p));
+    p.addEventListener('keydown', e=>{
+      if(e.key==='Enter' || e.key===' '){ e.preventDefault(); openLightbox(p); }
+    });
+  });
+  lbClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e=>{ if(e.target===lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLightbox(); });
+</script>
+</body>
+</html>
